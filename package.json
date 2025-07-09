@@ -1,8 +1,19 @@
 {
-  "name": "tt",
-  "version": "0.0.0",
-  "private": true,
+  "name": "family-graph-vue",
+  "version": "0.1.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/family-graph-vue.umd.cjs",
+  "module": "./dist/family-graph-vue.js",
+  "exports": {
+    ".": {
+      "import": "./dist/family-graph-vue.js",
+      "require": "./dist/family-graph-vue.umd.cjs"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
@@ -11,14 +22,17 @@
     "type-check": "vue-tsc --build"
   },
   "dependencies": {
+    "pinia": "^3.0.3",
     "vue": "^3.5.17"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.15.32",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "npm-run-all2": "^8.0.4",
+    "tailwindcss": "^4.1.11",
     "typescript": "~5.8.0",
     "vite": "^7.0.0",
     "vite-plugin-vue-devtools": "^7.7.7",
